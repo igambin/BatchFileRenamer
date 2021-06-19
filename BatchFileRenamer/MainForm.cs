@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -241,6 +240,7 @@ namespace BatchFileRenamer
             }
             catch (Exception ex)
             {
+                MessageBox.Show(this, ex.Message, "Regex Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 SearchExpression = null;
                 cbRegexSearch.BackColor = System.Drawing.Color.MistyRose;
                 regexPreview.Enabled = false;
@@ -490,6 +490,7 @@ namespace BatchFileRenamer
 
         private void OpenEditor(List<string> source)
         {
+            _editorSource = source;
             _editor = new EditorForm(source);
             _editor.CancelButtonClicked += _editor_CancelButtonClicked;
             _editor.SaveButtonClicked += _editor_SaveButtonClicked;
@@ -510,5 +511,8 @@ namespace BatchFileRenamer
         }
 
         private void searchRegex_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => OpenEditor(_regexSearchData);
+
+        private void regexReplace_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) => OpenEditor(_regexReplaceData);
+        
     }
 }

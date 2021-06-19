@@ -43,10 +43,11 @@ namespace BatchFileRenamer
             this.label1 = new System.Windows.Forms.Label();
             this.cbSimpleSearch = new System.Windows.Forms.ComboBox();
             this.tabRegex = new System.Windows.Forms.TabPage();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.regexReplace = new System.Windows.Forms.Button();
             this.cbRegexSearch = new System.Windows.Forms.ComboBox();
             this.regexPreview = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.cbRegexReplace = new System.Windows.Forms.ComboBox();
             this.tabSettings = new System.Windows.Forms.TabPage();
             this.hideSaveResetHint = new System.Windows.Forms.CheckBox();
@@ -65,7 +66,6 @@ namespace BatchFileRenamer
             this.saveChanges = new System.Windows.Forms.Button();
             this.resetChanges = new System.Windows.Forms.Button();
             this.saveresetHint = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabSimple.SuspendLayout();
             this.tabRegex.SuspendLayout();
@@ -213,7 +213,7 @@ namespace BatchFileRenamer
             this.tabRegex.Controls.Add(this.regexReplace);
             this.tabRegex.Controls.Add(this.cbRegexSearch);
             this.tabRegex.Controls.Add(this.regexPreview);
-            this.tabRegex.Controls.Add(this.label3);
+            this.tabRegex.Controls.Add(this.linkLabel2);
             this.tabRegex.Controls.Add(this.cbRegexReplace);
             this.tabRegex.Location = new System.Drawing.Point(4, 24);
             this.tabRegex.Name = "tabRegex";
@@ -222,6 +222,17 @@ namespace BatchFileRenamer
             this.tabRegex.TabIndex = 1;
             this.tabRegex.Text = "Regular Expressions";
             this.tabRegex.UseVisualStyleBackColor = true;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(15, 16);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(77, 15);
+            this.linkLabel1.TabIndex = 3;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Search RegEx";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.searchRegex_LinkClicked);
             // 
             // regexReplace
             // 
@@ -263,12 +274,13 @@ namespace BatchFileRenamer
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 44);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Replace pattern";
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(3, 44);
+            this.linkLabel2.Name = "label3";
+            this.linkLabel2.Size = new System.Drawing.Size(89, 15);
+            this.linkLabel2.TabIndex = 1;
+            this.linkLabel2.Text = "Replace pattern";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.regexReplace_LinkClicked);
             // 
             // cbRegexReplace
             // 
@@ -509,17 +521,6 @@ namespace BatchFileRenamer
             this.saveresetHint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.saveresetHint.Visible = false;
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(15, 16);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(77, 15);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Search RegEx";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.searchRegex_LinkClicked);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -571,7 +572,7 @@ namespace BatchFileRenamer
         private System.Windows.Forms.Button regexReplace;
         private System.Windows.Forms.ComboBox cbRegexSearch;
         private System.Windows.Forms.Button regexPreview;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.ComboBox cbRegexReplace;
         private System.Windows.Forms.TabPage tabSettings;
         private System.Windows.Forms.DataGridView dataGridView1;
